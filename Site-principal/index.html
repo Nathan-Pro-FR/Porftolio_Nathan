@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio // Sakura & Glassmorphism</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="sakura-canvas"></canvas>
+
+    <nav class="glass-nav">
+        <div class="logo">Portfolio.</div>
+        <ul>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#projects">Projets</a></li>
+        </ul>
+        
+        <div class="audio-container">
+            <div class="credits">
+                <span class="track-title">Sakura Serenity</span>
+                <span class="artist-name">par Melodigne</span>
+            </div>
+            
+            <button id="music-btn" class="music-control" aria-label="Jouer la musique">
+                <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16">
+                    <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" width="16" height="16">
+                    <path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                </svg>
+            </button>
+            
+            <div id="visualizer" class="visualizer">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <audio id="bg-music" src="audio/melodigne-sakura-serenity-171002.mp3" loop></audio>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="glass-card hero-content">
+                <h1>Bienvenue sur mon Portfolio</h1>
+                <p>Un espace épuré, transparent et inspiré des cerisiers en fleurs.</p>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="glass-card">
+                <h2>À propos</h2>
+                <p>Développeur passionné par les interfaces graphiques soignées et les expériences utilisateurs fluides.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div id="projects-grid" class="glass-grid">
+                </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

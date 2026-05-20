@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga Sakura Collector 🌸 - Netlify Edition</title>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <style>
+        :root {
+            --sakura-pink: #ffb7c5;
+            --dark-sakura: #d4418e;
+            --soft-white: #fff5f7;
+        }
+
+        body {
+            background-color: var(--soft-white);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+
+        /* --- Animation Pétales Sakura --- */
+        #sakura-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .petal {
+            position: absolute;
+            background-color: var(--sakura-pink);
+            border-radius: 150% 0 150% 0;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* --- Layout --- */
+        .app-container {
+            position: relative;
+            z-index: 10;
+            max-width: 600px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(8px);
+        }
+
+        h1 { text-align: center; color: var(--dark-sakura); margin-top: 0; }
+
+        /* --- Scanner --- */
+        #reader {
+            width: 100%;
+            border: 3px solid var(--sakura-pink);
+            border-radius: 15px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        #result-text {
+            text-align: center;
+            font-weight: bold;
+            color: var(--dark-sakura);
+            margin: 15px 0;
+            min-height: 1.2em;
+        }
+
+        /* --- Contrôles --- */
+        .controls, .notif-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--sakura-pink);
+        }
+
+        button {
+            background: var(--sakura-pink);
+            border: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover { background: var(--dark-sakura); transform: scale(1.05); }
+
+        select {
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid var(--sakura-pink);
+            outline: none;
+        }
+
+        /* --- Liste de Mangas --- */
+        #manga-list { list-style: none; padding: 0; }
+
+        .manga-card {
+            display: flex;
+            background: white;
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--sakura-pink);
+            position: relative;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .manga-card img {
+            width: 70px;
+            height: 105px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-right: 15px;
+        }
+
+        .manga-info h4 { margin: 0 0 5px 0; color: var(--dark-sakura); }
+        .manga-info p { margin: 3px 0; font-size: 0.85em; }
+
+        .delete-btn {
+            position: absolute;
+            top: 10px; right: 10px;
+            background: #ff6b6b;
+            color: white;
+            width: 25px; height: 25px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="sakura-container"></div>
+
+    <div class="app-container">
+        <h1>🌸 Sakura Manga</h1>
+
+        <div id="reader"></div>
+        <p id="result-text">Chargement du scanner...</p>
+
+        <div class="controls">
+            <button id="btn-export">💾 Exporter JSON</button>
+            <button id="btn-import-trigger">📂 Importer JSON</button>
+            <input type="file" id="importFile" style="display:none">
+        </div>
+
+        <div class="notif-section">
+            <select id="publisher-select">
+                <option value="">Suivre un éditeur...</option>
+                <option value="Pika">Pika Edition</option>
+                <option value="Kana">Kana</option>
+                <option value="Glénat">Glénat</option>
+                <option value="Ki-oon">Ki-oon</option>
+                <option value="Kurokawa">Kurokawa</option>
+            </select>
+            <button id="btn-notif">🔔 M'alerter</button>
+        </div>
+
+        <ul id="manga-list"></ul>
+    </div>
+
+    <script>
+        // ==========================================
+        //         CONFIGURATION DE L'API
+        // ==========================================
+        const MY_GOOGLE_BOOKS_API_KEY = "AIzaSyANO2quH6SBfDfpzzPo4JYVQe9hnrjOOng"; // <--- METS TA CLÉ ICI !
+        // ==========================================
+
+        let myCollection = JSON.parse(localStorage.getItem('manga_collection')) || [];
+        const html5QrCode = new Html5Qrcode("reader");
+
+        // Initialisation au démarrage
+        window.onload = () => {
+            renderList();
+            startScanner();
+            startSakura();
+            setupEventListeners();
+        };
+
+        // --- Animation Sakura ---
+        function startSakura() {
+            const container = document.getElementById('sakura-container');
+            setInterval(() => {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.left = Math.random() * 100 + 'vw';
+                const size = Math.random() * 8 + 7 + 'px';
+                petal.style.width = size;
+                petal.style.height = size;
+                petal.style.animationDuration = Math.random() * 3 + 4 + 's';
+                container.appendChild(petal);
+                setTimeout(() => petal.remove(), 6000);
+            }, 400); // Vitesse d'apparition des pétales
+        }
+
+        // --- Logique du Scanner ---
+        function startScanner() {
+            const config = { fps: 10, qrbox: { width: 250, height: 150 } };
+            
+            // Tente de démarrer la caméra arrière
+            html5QrCode.start(
+                { facingMode: "environment" }, 
+                config,
+                (decodedText) => {
+                    // Pour éviter les doublons accidentels lors du scan
+                    html5QrCode.pause();
+                    addMangaFromAPI(decodedText);
+                    // Reprise du scanner après 3 secondes
+                    setTimeout(() => html5QrCode.resume(), 3000);
+                }
+            ).catch(err => {
+                document.getElementById('result-text').innerText = "Caméra non accessible (HTTPS requis)";
+            });
+        }
+
+        // --- Appel API Google Books ---
+        async function addMangaFromAPI(ean) {
+            const status = document.getElementById('result-text');
+            status.innerText = "🔍 Recherche de : " + ean;
+
+            // Vérification si déjà présent dans la collection
+            if(myCollection.some(m => m.ean === ean)) {
+                status.innerText = "⚠️ Déjà dans la collection !";
+                return;
+            }
+
+            try {
+                // Construction de l'URL avec la clé API configurée en haut
+                const url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${ean}&key=${MY_GOOGLE_BOOKS_API_KEY}`;
+                
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.totalItems > 0) {
+                    const item = data.items[0].volumeInfo;
+                    const manga = {
+                        id: Date.now(),
+                        ean: ean,
+                        title: item.title,
+                        authors: item.authors ? item.authors.join(', ') : 'Auteur inconnu',
+                        publisher: item.publisher || 'Éditeur inconnu',
+                        thumbnail: item.imageLinks ? item.imageLinks.thumbnail : 'https://via.placeholder.com/70x105?text=No+Cover'
+                    };
+                    
+                    myCollection.unshift(manga); // Ajoute au début
+                    saveAndRender();
+                    status.innerText = "✅ Ajouté : " + item.title;
+                } else {
+                    status.innerText = "❌ Manga introuvable sur Google Books";
+                }
+            } catch (err) {
+                console.error(err);
+                status.innerText = "❌ Erreur API (Vérifiez votre clé ou connexion)";
+            }
+        }
+
+        // --- Rendu de la Liste ---
+        function renderList() {
+            const list = document.getElementById('manga-list');
+            list.innerHTML = myCollection.map(m => `
+                <li class="manga-card">
+                    <img src="${m.thumbnail}" alt="Couverture de ${m.title}">
+                    <div class="manga-info">
+                        <h4>${m.title}</h4>
+                        <p><strong>Auteur :</strong> ${m.authors}</p>
+                        <p><strong>Éditeur :</strong> ${m.publisher}</p>
+                        <small>EAN: ${m.ean}</small>
+                    </div>
+                    <button class="delete-btn" data-id="${m.id}">×</button>
+                </li>
+            `).join('');
+
+            // Ajout des événements de suppression sur les nouveaux boutons
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.onclick = () => {
+                    const id = parseInt(btn.getAttribute('data-id'));
+                    myCollection = myCollection.filter(m => m.id !== id);
+                    saveAndRender();
+                };
+            });
+        }
+
+        function saveAndRender() {
+            // Sauvegarde dans le stockage local du navigateur
+            localStorage.setItem('manga_collection', JSON.stringify(myCollection));
+            renderList();
+        }
+
+        // --- Configuration des Écouteurs d'Événements ---
+        function setupEventListeners() {
+            // Export JSON
+            document.getElementById('btn-export').onclick = () => {
+                const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(myCollection));
+                const downloadAnchor = document.createElement('a');
+                downloadAnchor.setAttribute("href", dataStr);
+                downloadAnchor.setAttribute("download", "ma_collection_manga.json");
+                downloadAnchor.click();
+                downloadAnchor.remove();
+            };
+
+            // Déclencheur d'Import (clic caché)
+            document.getElementById('btn-import-trigger').onclick = () => {
+                document.getElementById('importFile').click();
+            };
+
+            // Logique d'Import JSON
+            document.getElementById('importFile').onchange = (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    try {
+                        const imported = JSON.parse(event.target.result);
+                        // Fusion et suppression des doublons basés sur l'EAN
+                        myCollection = [...imported, ...myCollection];
+                        myCollection = Array.from(new Set(myCollection.map(a => a.ean)))
+                                            .map(ean => myCollection.find(a => a.ean === ean));
+                        
+                        saveAndRender();
+                        document.getElementById('result-text').innerText = "✅ Importation réussie !";
+                    } catch (err) {
+                        alert("Erreur lors de la lecture du fichier JSON.");
+                    }
+                };
+                reader.readAsText(file);
+            };
+
+            // Notifications d'alerte (Simulation)
+            document.getElementById('btn-notif').onclick = () => {
+                const pub = document.getElementById('publisher-select').value;
+                if(!pub) return alert("Veuillez sélectionner un éditeur.");
+
+                if (!("Notification" in window)) {
+                    alert("Votre navigateur ne supporte pas les notifications.");
+                } else {
+                    Notification.requestPermission().then(p => {
+                        if(p === "granted") {
+                            alert(`🌸 Vous serez alerté des prochaines parutions de ${pub} !`);
+                        } else {
+                            alert("Veuillez autoriser les notifications pour cette fonctionnalité.");
+                        }
+                    });
+                }
+            };
+        }
+    </script>
+</body>
+</html>
