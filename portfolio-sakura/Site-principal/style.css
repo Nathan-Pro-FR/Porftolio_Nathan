@@ -1,0 +1,278 @@
+/* --- Variables et configuration globale --- */
+:root {
+    --bg-image: url('Images/Image_fond_Porfolios_v2.png'); 
+    --glass-bg: rgba(255, 255, 255, 0.22); 
+    --glass-border: rgba(255, 255, 255, 0.35);
+    --glass-shadow: rgba(0, 0, 0, 0.12);
+    --text-color: #1a1c23; 
+    --sakura-pink: #f7aef8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+}
+
+/* --- Canvas en arrière-plan --- */
+#sakura-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+    pointer-events: none;
+}
+
+/* --- Effet Glassmorphism (Cartes du site) --- */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 var(--glass-shadow);
+    padding: 2.5rem;
+    position: relative;
+    z-index: 2; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.32); 
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.18);
+}
+
+/* --- Barre de Navigation --- */
+.glass-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    background: rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    z-index: 100; 
+}
+
+.glass-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.glass-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+}
+
+.glass-nav a:hover {
+    opacity: 0.7;
+}
+
+/* --- Bloc Audio & Visualizer --- */
+.audio-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.credits {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+.track-title {
+    font-weight: 700;
+}
+
+.artist-name {
+    font-style: italic;
+    font-size: 0.7rem;
+}
+
+.music-control {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%; 
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.music-control:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.08);
+}
+
+.music-control .icon-pause { display: none; }
+.music-control.playing .icon-play { display: none; }
+.music-control.playing .icon-pause { display: block; }
+.music-control.playing {
+    border-color: var(--sakura-pink);
+    box-shadow: 0 0 10px rgba(247, 174, 248, 0.4);
+}
+
+/* --- Le Mini Audio Visualizer --- */
+.visualizer {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    width: 24px;
+    height: 20px;
+}
+
+.bar {
+    width: 3px;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 3px;
+    transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+.visualizer.active .bar {
+    background-color: #e07a5f;
+    animation: bounce 0.8s ease-in-out infinite alternate;
+}
+
+.visualizer.active .bar:nth-child(1) { animation-delay: 0.1s; animation-duration: 0.6s; }
+.visualizer.active .bar:nth-child(2) { animation-delay: 0.3s; animation-duration: 0.9s; }
+.visualizer.active .bar:nth-child(3) { animation-delay: 0.0s; animation-duration: 0.7s; }
+.visualizer.active .bar:nth-child(4) { animation-delay: 0.4s; animation-duration: 0.5s; }
+
+@keyframes bounce {
+    0% { height: 3px; }
+    100% { height: 20px; }
+}
+
+/* --- Structure des Sections --- */
+main {
+    margin-top: 140px;
+    padding: 0 5%;
+    position: relative;
+    z-index: 2;
+}
+
+section {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.glass-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* --- Style interne des projets dynamiques --- */
+.project-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+.project-thumb {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Petit effet de zoom sur la miniature au survol de la carte */
+.project-item:hover .project-thumb img {
+    transform: scale(1.05);
+}
+
+.project-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
+
+/* Bouton interactif "Voir le projet" au design épuré */
+.project-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid var(--glass-border);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
