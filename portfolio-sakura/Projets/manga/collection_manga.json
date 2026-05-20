@@ -1,0 +1,101 @@
+[
+    {
+        "id": "1504894459999944704",
+        "isbn": "9782373499759",
+        "title": "Bloom Tome 1",
+        "authors": [
+            "Auteur inconnu"
+        ],
+        "thumbnail": "https://via.placeholder.com/150x220?text=No+Cover",
+        "added_by": "nathanfurry_lax",
+        "added_at": "2026-05-15 17:13:18.851000+00:00"
+    },
+    {
+        "id": "1504895603929251840",
+        "isbn": "9782373499766",
+        "title": "Bloom Tome 2",
+        "authors": [
+            "Auteur inconnu"
+        ],
+        "thumbnail": "https://via.placeholder.com/150x220?text=No+Cover",
+        "added_by": "nathanfurry_lax",
+        "added_at": "2026-05-15 17:17:51.585000+00:00"
+    },
+    {
+        "id": "1504895806174396416",
+        "isbn": "9782373499773",
+        "title": "Bloom Tome 3",
+        "authors": [
+            "Auteur inconnu"
+        ],
+        "thumbnail": "https://via.placeholder.com/150x220?text=No+Cover",
+        "added_by": "nathanfurry_lax",
+        "added_at": "2026-05-15 17:18:39.804000+00:00"
+    },
+    {
+        "id": "1504895986059706368",
+        "isbn": "9782384963904",
+        "title": "Bloom Tome 4",
+        "authors": [
+            "Auteur inconnu"
+        ],
+        "thumbnail": "https://via.placeholder.com/150x220?text=No+Cover",
+        "added_by": "nathanfurry_lax",
+        "added_at": "2026-05-15 17:19:22.692000+00:00"
+    },
+    {
+        "id": "1504896212707311616",
+        "isbn": "9782384963911",
+        "title": "Bloom Tome 5",
+        "authors": [
+            "Auteur inconnu"
+        ],
+        "thumbnail": "https://via.placeholder.com/150x220?text=No+Cover",
+        "added_by": "nathanfurry_lax",
+        "added_at": "2026-05-15 17:20:16.729000+00:00"
+    },
+    {
+        "id": "1504902864709877760",
+        "isbn": "9782384963928",
+        "title": "Bloom Tome 6",
+        "authors": [
+            "Auteur inconnu"
+        ],
+        "thumbnail": "https://via.placeholder.com/150x220?text=No+Cover",
+        "added_by": "nathanfurry_lax",
+        "added_at": "2026-05-15 17:46:42.690000+00:00"
+    },
+    {
+        "id": "1504904963376021504",
+        "isbn": "9782384966424",
+        "title": "Bloom Tome 7",
+        "authors": [
+            "Saka Mikami"
+        ],
+        "thumbnail": "https://via.placeholder.com/150x220?text=No+Cover",
+        "added_by": "nathanfurry_lax",
+        "added_at": "2026-05-15 17:55:03.051000+00:00"
+    },
+    {
+        "id": "1504905112693243904",
+        "isbn": "9782384966448",
+        "title": "Bloom Tome 8",
+        "authors": [
+            "Auteur inconnu"
+        ],
+        "thumbnail": "https://via.placeholder.com/150x220?text=No+Cover",
+        "added_by": "nathanfurry_lax",
+        "added_at": "2026-05-15 17:55:38.651000+00:00"
+    },
+    {
+        "id": "1505291458364571648",
+        "isbn": "9782355927713",
+        "title": "A silent voice",
+        "authors": [
+            "Yoshitoki Oima"
+        ],
+        "thumbnail": "https://via.placeholder.com/150x220?text=No+Cover",
+        "added_by": "nekogaru_meow",
+        "added_at": "2026-05-16 19:30:50.637000+00:00"
+    }
+]

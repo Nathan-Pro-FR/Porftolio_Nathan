@@ -1,0 +1,56 @@
+🌸====================================================================🌸
+ ║        _____  _____   ______  _____   _____  _______  _____         ║
+ ║       / ____||  __ \ |  ____||  __ \ |_   _||__   __|/ ____|        ║
+ ║      | |     | |__) || |__   | |  | |  | |     | |  | (___          ║
+ ║      | |     |  _  / |  __|  | |  | |  | |     | |   \___ \         ║
+ ║      | |____ | | \ \ | |____ | |__| | _| |_    | |   ____) |        ║
+ ║       \_____||_|  \_\|______||_____/ |_____|   |_|  |_____/         ║      
+ ║                                                                     ║
+ ║                                                                     ║
+ ║                      ~ CREDITS & REMERCIEMENTS ~                    ║
+🌸====================================================================🌸
+
+ ┌──────────────────────────────────────────────────────────────────────┐
+ │                            [DESIGN  CODE]                            │
+ └──────────────────────────────────────────────────────────────────────┘
+   • Réalisé par   : Nathan LACROIX
+   • Technologies  : HTML5, CSS3, Vanilla JavaScript (Canvas API)
+   • Concept       : Glassmorphism épuré & Pluie animée de Sakura
+
+ ┌──────────────────────────────────────────────────────────────────────┐
+ │                        [ILLUSTRATION DE FOND]                        │
+ └──────────────────────────────────────────────────────────────────────┘
+   • Fichier       : Image_fond_Porfolios_v2.png
+   • Source        : Généré par IA (Nano Banana 2)
+   • Style         : Anime / Lofi ambient landscape
+
+ ┌──────────────────────────────────────────────────────────────────────┐
+ │                         [MUSIQUE D'AMBIANCE]                         │
+ └──────────────────────────────────────────────────────────────────────┘
+   • Titre         : Sakura Serenity
+   • Compositeur   : Melodigne
+   • Licence       : Libre de droits (Pixabay Music)
+   • Lien d'origine: https://pixabay.com/fr/music/beats-sakura-serenity-171002/
+
+ ┌──────────────────────────────────────────────────────────────────────┐
+ │                         [ICÔNES  GRAPHISMES]                         │
+ └──────────────────────────────────────────────────────────────────────┘
+   
+   
+   • Fichier       : solid+play+pause-1336347161572721483_0px.svg
+   • Nom de l'icône: Solid Play Pause
+   • Nom du set    : Heroicons
+   • URL d'origine : https://icons-for-free.com/solid+play+pause-1336347161572721483/
+
+   » INFORMATIONS AUTEUR :
+     ├─ Auteur     : Heroicons
+     └─ Site web   : https://heroicons.com/
+
+   » INFORMATIONS SUPPLÉMENTAIRES :
+     ├─ Publication: 21 juin 2024
+     └─ Licence    : Licence MIT (Utilisation libre et gratuite)
+
+ 🌸====================================================================🌸
+ ║         °  .  ○  Merci d'avoir visité ce portfolio !  ○  .  °         ║
+ ║                   * . o  🌸  N.L — 2026  🌸  o . *                   ║
+ 🌸====================================================================🌸
