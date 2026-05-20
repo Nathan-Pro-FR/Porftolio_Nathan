@@ -9,7 +9,7 @@
         "title": "MSC Application",
         "description": "Page de présentation officielle de l'application MSC, incluant les conditions générales et la politique de confidentialité.",
         "image": "../Site-principal/Images/Image_fond_porfolios.png", 
-        "link": "../Projets/msc/index.html"
+        "link": "../Projets/index-msc/index.html"
     },
     {
         "title": "Manga Bot (Discord)",
