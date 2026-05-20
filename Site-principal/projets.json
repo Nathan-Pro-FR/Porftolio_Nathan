@@ -9,12 +9,12 @@
         "title": "MSC Application",
         "description": "Page de présentation officielle de l'application MSC, incluant les conditions générales et la politique de confidentialité.",
         "image": "../Site-principal/Images/Image_fond_porfolios.png", 
-        "link": "../Projets/msc-landing/index.html"
+        "link": "../Projets/msc/index.html"
     },
     {
         "title": "Manga Bot (Discord)",
         "description": "Un bot Python intelligent capable de gérer et suivre une collection complète de mangas directement sur Discord.",
         "image": "../Site-principal/Images/Image_fond_porfolios.png", 
-        "link": "https://github.com/ton-pseudo-github/nom-du-repo-manga"
+        "link": "https://github.com/Nathan-pro-fr/"
     }
 ]
