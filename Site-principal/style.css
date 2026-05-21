@@ -1,6 +1,6 @@
 /* --- Variables et configuration globale --- */
 :root {
-    --bg-image: url('Images/Image_fond_Porfolios_v2.png'); 
+    --bg-image: url('Images/Image_fond_Porfolios_v2.webp'); 
     --glass-bg: rgba(255, 255, 255, 0.22); 
     --glass-border: rgba(255, 255, 255, 0.35);
     --glass-shadow: rgba(0, 0, 0, 0.12);
