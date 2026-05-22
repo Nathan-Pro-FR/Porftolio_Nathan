@@ -73,6 +73,7 @@ animate();
 const musicBtn = document.getElementById('music-btn');
 const bgMusic = document.getElementById('bg-music');
 const visualizer = document.getElementById('visualizer');
+let toastTimeout; 
 
 bgMusic.volume = 0; 
 
@@ -82,6 +83,9 @@ musicBtn.addEventListener('click', () => {
         musicBtn.classList.add('playing');
         visualizer.classList.add('active'); 
         
+        // Déclenchement du popup en mode LECTURE avec ton SVG
+        showMusicToast("play", "Lecture", "Sakura Serenity - Melodigne");
+
         let volumeInterval = setInterval(() => {
             if (bgMusic.volume < 0.2) { 
                 bgMusic.volume += 0.02;
@@ -95,6 +99,9 @@ musicBtn.addEventListener('click', () => {
         musicBtn.classList.remove('playing');
         visualizer.classList.remove('active'); 
         bgMusic.volume = 0;
+
+        // Déclenchement du popup en mode PAUSE avec ton SVG
+        showMusicToast("pause", "Musique en pause", "À bientôt !");
     }
 });
 
@@ -106,14 +113,11 @@ async function loadProjects() {
     if (!projectsGrid) return;
 
     try {
-        // 1. Récupération des données du fichier projets.json
         const response = await fetch('projets.json');
         const myProjects = await response.json();
 
-        // 2. Nettoyage de la grille par sécurité
         projectsGrid.innerHTML = ""; 
 
-        // 3. Génération et injection des cartes Glassmorphism
         myProjects.forEach(project => {
             const projectCard = document.createElement('div');
             projectCard.classList.add('glass-card', 'project-item');
@@ -139,5 +143,37 @@ async function loadProjects() {
     }
 }
 
-// Lancement automatique au chargement du script
 loadProjects();
+
+
+// --- FONCTION POUR LE POPUP AUDIO DYNAMIQUE (TOAST) ---
+function showMusicToast(iconType, title, sub) {
+    const toast = document.getElementById('music-toast');
+    const toastIcon = document.getElementById('toast-icon');
+    const toastTitle = document.getElementById('toast-title');
+    const toastSub = document.getElementById('toast-sub');
+    
+    if (!toast) return;
+
+    // On nettoie les anciennes classes pour éviter les conflits
+    toastIcon.classList.remove('play-mode', 'pause-mode');
+    
+    // On ajoute la classe correspondante ("play-mode" ou "pause-mode")
+    if (iconType === 'play') {
+        toastIcon.classList.add('play-mode');
+    } else {
+        toastIcon.classList.add('pause-mode');
+    }
+
+    if (title && toastTitle) toastTitle.textContent = title;
+    if (sub && toastSub) toastSub.textContent = sub;
+
+    // Réinitialisation du chronomètre et affichage du toast
+    clearTimeout(toastTimeout);
+    toast.classList.add('show');
+
+    // Masquage automatique du popup après 3.5 secondes
+    toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3500);
+}
