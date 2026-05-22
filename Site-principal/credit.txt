@@ -50,6 +50,13 @@
      ├─ Publication: 21 juin 2024
      └─ Licence    : Licence MIT (Utilisation libre et gratuite)
 
+ ┌──────────────────────────────────────────────────────────────────────┐
+ │                            [COMPRESSIONS]                            │
+ └──────────────────────────────────────────────────────────────────────┘
+
+   • Images        : https://squoosh.app/
+   • Musique       : https://audio.online-convert.com/fr/convertir-en-mp3
+
  🌸====================================================================🌸
  ║         °  .  ○  Merci d'avoir visité ce portfolio !  ○  .  °         ║
  ║                   * . o  🌸  N.L — 2026  🌸  o . *                   ║
