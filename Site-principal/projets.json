@@ -6,8 +6,8 @@
         "link": "../Projets/Mes-Waifus-Preferees/index.html"
     },
     {
-        "title": "Manga Sakura Collector Application",
-        "description": "Page de vissionneur du bot discord pour lire le fichier .JSON fournit par le bot Discord du projet Manga Bot, le site incluant les conditions générales et la politique de confidentialité de Discord",
+        "title": "Manga Sakura Collector Application - Scanneur Mangas en ligne",
+        "description": "Un Site web intelligent capable de gérer et suivre une collection complète de mangas directement sur l'API de Google Book.",
         "image": "../Site-principal/Images/Image_fond_porfolios.png", 
         "link": "../Projets/index-msc/index.html"
     },
@@ -16,5 +16,10 @@
         "description": "Un bot Python intelligent capable de gérer et suivre une collection complète de mangas directement sur Discord.",
         "image": "../Site-principal/Images/Image_fond_porfolios.png", 
         "link": "https://github.com/Nathan-pro-fr/"
-    }
+    },
+    {
+        "title": "Manga Sakura Collector",
+        "description": "Page de vissionneur du bot discord pour lire le fichier .JSON fournit par le bot Discord du projet Manga Bot, le site incluant les conditions générales et la politique de confidentialité de Discord",
+        "image": "../Site-principal/Images/Image_fond_porfolios.png",
+        "link": "../Projets/msc/index.html"
 ]
