@@ -1,4 +1,4 @@
-# 🌸 Nathan LACROIX | Portfolio - Sakura & Glassmorphism
+# 🌸 Nathan | Portfolio - Sakura & Glassmorphism
 
 [![Langage](https://img.shields.io/badge/Langage-HTML5%20%2F%20CSS3%20%2F%20JavaScript-orange?style=for-the-badge&logo=javascript)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
 [![Outils](https://img.shields.io/badge/Release-Standard--Version-brightgreen?style=for-the-badge&logo=conventionalcommits)](https://github.com/conventional-changelog/standard-version)
