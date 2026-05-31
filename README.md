@@ -3,8 +3,9 @@
 [![Langage](https://img.shields.io/badge/Langage-HTML5%20%2F%20CSS3%20%2F%20JavaScript-orange?style=for-the-badge&logo=javascript)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
 [![Outils](https://img.shields.io/badge/Release-Standard--Version-brightgreen?style=for-the-badge&logo=conventionalcommits)](https://github.com/conventional-changelog/standard-version)
 [![Style](https://img.shields.io/badge/Design-Glassmorphism-purple?style=for-the-badge)](https://css-tricks.com/glassmorphism-css/)
+[![Licence](https://img.shields.io/badge/Licence-MIT-blue?style=for-the-badge)](LICENSE)
 
-Bienvenue sur le dépôt officiel de mon portfolio principal. Cet espace présente un univers visuel épuré, transparent et poétique inspiré des cerisiers en fleurs (Sakura), tout en regroupant mes projets de développement web, d'applications et de scripts. 
+Bienvenue sur le dépôt officiel de mon portfolio principal. Cet espace présente un univers visuel épuré, transparent et poétique inspiré des cerisiers en fleurs (Sakura), tout en regroupant mes projets de développement web, d'applications et de scripts.
 
 ---
 
@@ -17,12 +18,13 @@ Bienvenue sur le dépôt officiel de mon portfolio principal. Cet espace présen
 - [5. 🚀 Projets Présentés](#5--projets-presentes)
 - [6. 🚀 Lancement Local](#6--lancement-local)
 - [7. 🤝 Contributions](#7--contributions)
-- [8. 🎵 Crédits & Remerciements](#8--credits--remerciements)
-- [9. 📬 Me Contacter / Renseignements](#9--me-contacter--renseignements)
+- [8. 📜 Licence](#8--licence)
+- [9. 🎵 Crédits & Remerciements](#9--credits--remerciements)
+- [10. 📬 Me Contacter / Renseignements](#10-📬-me-contacter--renseignements)
 
 ---
 
-## 1. 🗺️ Architecture & Flux du Projet 
+## 1. 🗺️ Architecture & Flux du Projet
 
 Voici l'organisation de l'écosystème de mes projets et de la structure globale. 
 
@@ -162,6 +164,7 @@ graph LR
     class ID16,ID29,ID31,ID33,ID34 C7_Fichier;
 
 ```
+</b>
 </details>
 
 ### 📁 Aperçu rapide des dossiers principaux
@@ -169,11 +172,11 @@ graph LR
 | Emplacement | Rôle |
 | --- | --- |
 | `Site-principal/` | Contient le cœur du portfolio (styles glassmorphism, scripts audio et animation canvas). |
-| `Projets/manga/` | Script Python complet pour le fonctionnement de votre **Manga Bot Discord**. |
-| `Projets/index-msc/` | Page d'atterrissage, CGU et politiques de confidentialité de la Visionneuse Manga. |
+| `Projets/manga/` | Script Python complet pour le fonctionnement de mon **Manga Bot Discord**. |
+| `Projets/index-msc/` | CGU et politiques de confidentialité du bot **Manga Bot Discord**, Visionneuse JSON des Mangas. |
 | `Projets/Mes-Waifus-Preferees/` | Mini-application web interactive listant des personnages avec données stockées. |
 
->[hint] 💡 **À propos du design :** L'interface repose sur un effet *Glassmorphism* poussé (transparence, floutage d'arrière-plan avec `backdrop-filter`) combiné à une animation fluide de pluie de pétales de Sakura gérée via l'API Canvas de HTML5.
+> [HINT](💡 **À propos du design :** L'interface repose sur un effet *Glassmorphism* poussé (transparence, floutage d'arrière-plan avec `backdrop-filter`) combiné à une animation fluide de pluie de pétales de Sakura gérée via l'API Canvas de HTML5.)
 
 ---
 
@@ -257,11 +260,17 @@ npm run release
 
 ## 🤝 Contributions
 
-Les contributions, signalements de bugs ou suggestions d'amélioration sont les bienvenus ! Néanmoins, pour des raisons de clarté et de sécurité :
+Les contributions, les rapports de bugs et les suggestions sont les bienvenus ! Cependant, pour garantir la clarté et la sécurité de l'environnement :
 
-1. Ouvrez d'abord une **Issue** pour discuter du changement que vous souhaitez apporter.
-2. Évitez les Pull Requests directes sur la branche `main` sans discussion préalable.
-3. Respectez le format de message des [Conventional Commits]() lors de vos propositions.
+1. Ouvrez d'abord une **Issue** pour présenter et valider vos idées de modifications.
+2. Aucune Pull Request directe ne sera fusionnée sur `main` sans validation préalable des commits signés.
+3. Les messages de commit doivent impérativement respecter la convention [Conventional Commits]().
+
+---
+
+## 📜 Licence
+
+Ce projet est distribué sous licence **MIT**. Vous êtes libre de l'utiliser, de le modifier et de le distribuer, à condition d'inclure la mention de copyright originale. Consultez le fichier [LICENSE]() pour plus de détails.
 
 ---
 
@@ -277,9 +286,9 @@ Un grand merci aux créateurs des ressources en libre accès utilisées pour ce 
 
 ## 📬 Me Contacter / Renseignements
 
-Si vous avez besoin d'informations, de précisions ou si vous souhaitez échanger sur le projet, je suis joignable directement sur mes plateformes prioritaires :
+Si vous avez besoin d'informations, de précisions ou si vous souhaitez échanger sur le projet, je suis joignable directement sur mes réseaux officiels :
 
-* **💬 Discord :** [@Nathanfurry_lax]()
-* **✈️ Telegram :** [@Nathanfurry_lax]()
-
+* Discord : [@Nathanfurry_lax]()
+* Telegram : [@Nathanfurry_lax]()
+* Adresse mail : [Me contacter ;) ](mailto:laxnathan59.pro@gmail.com)
 ---
