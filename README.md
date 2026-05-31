@@ -4,7 +4,7 @@
 [![Outils](https://img.shields.io/badge/Release-Standard--Version-brightgreen?style=for-the-badge&logo=conventionalcommits)](https://github.com/conventional-changelog/standard-version)
 [![Style](https://img.shields.io/badge/Design-Glassmorphism-purple?style=for-the-badge)](https://css-tricks.com/glassmorphism-css/)
 
-Bienvenue sur le dépôt officiel de mon portfolio principal. Cet espace présente un univers visuel épuré, transparent et poétique inspiré des cerisiers en fleurs (Sakura), tout en regroupant mes projets de développement web, d'applications et de scripts.
+Bienvenue sur le dépôt officiel de mon portfolio principal. Cet espace présente un univers visuel épuré, transparent et poétique inspiré des cerisiers en fleurs (Sakura), tout en regroupant mes projets de développement web, d'applications et de scripts. 
 
 ---
 
@@ -22,7 +22,7 @@ Bienvenue sur le dépôt officiel de mon portfolio principal. Cet espace présen
 
 ---
 
-## 1. 🗺️ Architecture & Flux du Projet
+## 1. 🗺️ Architecture & Flux du Projet 
 
 Voici l'organisation de l'écosystème de mes projets et de la structure globale. 
 
