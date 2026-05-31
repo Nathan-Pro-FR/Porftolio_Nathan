@@ -293,5 +293,6 @@ Un grand merci aux créateurs des ressources en libre accès utilisées pour ce 
 
 Si vous avez besoin d'informations, de précisions ou si vous souhaitez échanger sur le projet, je suis joignable directement sur mes réseaux officiels :
 
-* 
+* ![discord](https://www.readmecodegen.com/api/social-icon?name=discord&size=96&animation=glow&animationDuration=1.5) Discord : @Nathanfurry_lax
+* [![telegram](https://www.readmecodegen.com/api/social-icon?name=telegram&size=96&animation=glow&animationDuration=1.5&link=t.me%2FNathanfurry_lax)](t.me/Nathanfurry_lax) Telegram : @Nathanfurry_lax
 ---
