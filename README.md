@@ -1,11 +1,16 @@
 # 🌸 Nathan | Portfolio - Sakura & Glassmorphism
 
-[![Langage](https://img.shields.io/badge/Langage-HTML5%20%2F%20CSS3%20%2F%20JavaScript-orange?style=for-the-badge&logo=javascript)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
-[![Outils](https://img.shields.io/badge/Release-Standard--Version-brightgreen?style=for-the-badge&logo=conventionalcommits)](https://github.com/conventional-changelog/standard-version)
-[![Style](https://img.shields.io/badge/Design-Glassmorphism-purple?style=for-the-badge)](https://css-tricks.com/glassmorphism-css/)
-[![Licence](https://img.shields.io/badge/Licence-MIT-blue?style=for-the-badge)](LICENSE)
+<p align="center">
+  <img src="https://img.shields.io/badge/Langage-HTML5%20%2F%20CSS3%20%2F%20JavaScript-orange?style=for-the-badge&logo=javascript" alt="Langage" />
+  <img src="https://img.shields.io/badge/Release-Standard--Version-brightgreen?style=for-the-badge&logo=conventionalcommits" alt="Outils" />
+  <img src="https://img.shields.io/badge/Design-Glassmorphism-purple?style=for-the-badge" alt="Style" />
+  <img src="https://img.shields.io/badge/Licence-MIT-blue?style=for-the-badge" alt="Licence" />
+</p>
 
-Bienvenue sur le dépôt officiel de mon portfolio principal. Cet espace présente un univers visuel épuré, transparent et poétique inspiré des cerisiers en fleurs (Sakura), tout en regroupant mes projets de développement web, d'applications et de scripts.
+<p align="center">
+  Bienvenue sur le dépôt officiel de mon portfolio principal.<br>
+  Cet espace présente un univers visuel épuré, transparent et poétique inspiré des cerisiers en fleurs (Sakura), tout en regroupant mes projets de développement web, d'applications et de scripts.
+</p>
 
 ---
 
@@ -20,7 +25,7 @@ Bienvenue sur le dépôt officiel de mon portfolio principal. Cet espace présen
 - [7. 🤝 Contributions](#7--contributions)
 - [8. 📜 Licence](#8--licence)
 - [9. 🎵 Crédits & Remerciements](#9--credits--remerciements)
-- [10. 📬 Me Contacter / Renseignements](#10-📬-me-contacter--renseignements)
+- [10. 📬 Me Contacter / Renseignements](#10-me-contacter--renseignements)
 
 ---
 
@@ -176,7 +181,7 @@ graph LR
 | `Projets/index-msc/` | CGU et politiques de confidentialité du bot **Manga Bot Discord**, Visionneuse JSON des Mangas. |
 | `Projets/Mes-Waifus-Preferees/` | Mini-application web interactive listant des personnages avec données stockées. |
 
-> [HINT](💡 **À propos du design :** L'interface repose sur un effet *Glassmorphism* poussé (transparence, floutage d'arrière-plan avec `backdrop-filter`) combiné à une animation fluide de pluie de pétales de Sakura gérée via l'API Canvas de HTML5.)
+> 💡 **À propos du design :** L'interface repose sur un effet *Glassmorphism* poussé (transparence, floutage d'arrière-plan avec `backdrop-filter`) combiné à une animation fluide de pluie de pétales de Sakura gérée via l'API Canvas de HTML5.
 
 ---
 
@@ -288,7 +293,5 @@ Un grand merci aux créateurs des ressources en libre accès utilisées pour ce 
 
 Si vous avez besoin d'informations, de précisions ou si vous souhaitez échanger sur le projet, je suis joignable directement sur mes réseaux officiels :
 
-* Discord : [@Nathanfurry_lax]()
-* Telegram : [@Nathanfurry_lax]()
-* Adresse mail : [Me contacter ;) ](mailto:laxnathan59.pro@gmail.com)
+* 
 ---
