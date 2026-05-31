@@ -22,7 +22,7 @@ Bienvenue sur le dépôt officiel de mon portfolio principal. Cet espace présen
 
 ---
 
-## 1. 🗺️ Architecture & Flux du Projet
+## 1. 🗺️ Architecture & Flux du Projet 
 
 Voici l'organisation de l'écosystème de mes projets et de la structure globale. 
 
