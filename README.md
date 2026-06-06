@@ -12,9 +12,17 @@
   Cet espace présente un univers visuel épuré, transparent et poétique inspiré des cerisiers en fleurs (Sakura), tout en regroupant mes projets de développement web, d'applications et de scripts.
 </p>
 
+
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/chart?repos=Nathan-Pro-FR/Porftolio_Nathan&type=date&legend=top-left)](https://www.star-history.com/?repos=Nathan-Pro-FR%2FPorftolio_Nathan&type=date&legend=top-left)
+<a href="https://www.star-history.com/?repos=Nathan-Pro-FR%2FPorftolio_Nathan&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Nathan-Pro-FR/Porftolio_Nathan&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Nathan-Pro-FR/Porftolio_Nathan&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Nathan-Pro-FR/Porftolio_Nathan&type=date&legend=top-left" />
+ </picture>
+</a>
+
 
 ---
 
