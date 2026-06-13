@@ -254,7 +254,7 @@ Gérés dynamiquement depuis `projets.json` :
 1. **Cloner le projet :**
 
 ```bash
-git clone [https://github.com/Nathan-Pro-FR/Porftolio_Nathan.git](https://github.com/Nathan-Pro-FR/Porftolio_Nathan.git)
+git clone https://github.com/Nathan-Pro-FR/Porftolio_Nathan.git
 cd Porftolio_Nathan
 
 ```
